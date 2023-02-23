@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- * main - printf if number is positive, zero or negative
+ * main - printf if a number is positive, negative or zero.
+ *
  * return: always 0 (success)
  *
  */
