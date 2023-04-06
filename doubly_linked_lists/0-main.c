@@ -4,31 +4,29 @@
 #include "lists.h"
 
 /**
- * main - check the code
+ * main - check the code for Holberton School students.
  *
- * Return: Always EXIT_SUCCESS.
+ * Return: Always 0.
  */
 int main(void)
 {
-    dlistint_t *head;
-    dlistint_t *new;
-    dlistint_t hello = {8, NULL, NULL};
-    size_t n;
+	listint_t *head;
+	listint_t *new;
+	listint_t hello = {8, NULL};
+	size_t n;
 
-    head = &hello;
-    new = malloc(sizeof(dlistint_t));
-    if (new == NULL)
-    {
-        dprintf(2, "Error: Can't malloc\n");
-        return (EXIT_FAILURE);
-    }
-    new->n = 9;
-    head->prev = new;
-    new->next = head;
-    new->prev = NULL;
-    head = new;
-    n = print_dlistint(head);
-    printf("-> %lu elements\n", n);
-    free(new);
-    return (EXIT_SUCCESS);
+	head = &hello;
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	new->n = 9;
+	new->next = head;
+	head = new;
+	n = print_listint(head);
+	printf("-> %lu elements\n", n);
+	free(new);
+	return (0);
 }
